@@ -11,6 +11,7 @@ $(document).ready(function(){
     kirKanosArray.push(hk47);
     monlthlyCreditsSpent();
   });
+  $('.rakataPrime').on('click', '.delete', fireDeathStar);
   //monlthlyCreditsSpent();
 });
 
@@ -41,8 +42,13 @@ function monlthlyCreditsSpent(){
 
   $('.rakataPrime').append('<div></div>');
   var carnorJax = $('.rakataPrime').children().last();
-  carnorJax.append('<p>#' + employeeCount + ') NAME: ' + hk47.empName + ' ID NUMBER: ' + hk47.empIDnum + ' JOB TITLE: ' + hk47.jobTitle + ' YEARLY SALARY: ' + hk47.yearlySal);
+  carnorJax.append('<p>#' + employeeCount + ') NAME: ' + hk47.empName + ' ID NUMBER: ' + hk47.empIDnum + ' JOB TITLE: ' + hk47.jobTitle + ' YEARLY SALARY: ' + hk47.yearlySal + '</p>');
+  carnorJax.append('<button class="delete">Delete</button>');
   console.log(kirKanosArray);
   console.log(monthlyCreds);
   console.log(hk47);
+}
+
+function fireDeathStar(){
+  $(this).parent().remove();
 }
